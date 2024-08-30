@@ -14,7 +14,7 @@ function App() {
         <header>
           <MyNavbar />
         </header>
-        <main>
+        <main className='home'>
           <Search />
           <Routes>
             <Route path="/" element={<Home />} />

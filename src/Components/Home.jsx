@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 const cities = ['Rome', 'Beijing', 'Yaounde', 'Sydney', 'New York'];
 const apiKey = '5ed65535c7dde3c9591abce0c90ec36d'; 
 
 function Home() {
   const [weatherData, setWeatherData] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -13,25 +16,34 @@ function Home() {
           cities.map(async (city) => {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
             if (!response.ok) {
-              throw new Error('Errore nella fetch');
+              throw new Error(`Failed to fetch weather data for ${city}`);
             }
             return response.json();
           })
         );
         setWeatherData(data);
       } catch (error) {
-        console.error('Errore nella fetch:', error);
+        console.error('Error fetching weather data:', error);
+        setError(error.message);
       }
     };
 
     fetchWeather();
   }, []);
 
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (weatherData.length === 0) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div id="weatherCarousel" className="carousel slide " data-bs-ride="carousel">
+    <div id="weatherCarousel" className="carousel slide">
       <div className="carousel-inner">
         {weatherData.map((weather, index) => (
-          <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={weather.id}>
+          <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={weather.id || index}>
             <div className="d-block w-100 text-center">
               <h3>{weather.name}</h3>
               <p>Temperature: {weather.main.temp}°C</p>

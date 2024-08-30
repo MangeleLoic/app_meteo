@@ -15,7 +15,7 @@ function Search() {
       }
       const data = await response.json();
       setWeatherData(data);
-      navigate(`/city/${city}`, { state: { weatherData: data } }); 
+      navigate(`/previsioni/`, { state: { weatherData: data } }); 
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
