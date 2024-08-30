@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.css'; 
 import MyNavbar from './Components/MyNavbar';
 import MyFooter from './Components/MyFooter';
 import Search from './Components/Search';
@@ -14,11 +14,10 @@ function App() {
         <header>
           <MyNavbar />
         </header>
-        <main className='home'>
+        <main className="home">
           <Search />
           <Routes>
             <Route path="/" element={<Home />} />
-            
             <Route path="/previsioni" element={<CityDetails />} />
           </Routes>
         </main>

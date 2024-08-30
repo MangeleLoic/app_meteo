@@ -37,5 +37,27 @@
   }
 }
 .home {
-  background-image: url(./splendido-paesaggio-in-primavera-sfondo-meteo-con-nuvola-dinamica-su-cielo-blu-giorno-soleggiato-e-ventoso-buone-previsioni-meteo-concetto-2b23yw6.jpg);
+  background-image: url('./splendido-paesaggio-in-primavera-sfondo-meteo-con-nuvola-dinamica-su-cielo-blu-giorno-soleggiato-e-ventoso-buone-previsioni-meteo-concetto-2b23yw6.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  padding: 20px;
+  min-height: 100vh; 
+  color: white; 
 }
+
+#weatherCarousel {
+  margin: 15% auto; 
+  max-width: 80%;  
+  font-size: larger; 
+}
+
+.carousel-inner {
+  text-align: center; 
+}
+
+.carousel-item {
+  padding: 20px; 
+}
+
+

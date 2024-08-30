@@ -1,46 +1,48 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
 
 const MyFooter = () => (
-  <footer className="bg-dark text-white py-4">
-    <Row className="text-center mt-5">
+  <footer className="bg-dark text-white py-2">
+    <Row className="text-center">
       <Col xs={{ span: 6, offset: 3 }}>
-        <Row className="row-cols-1 row-cols-sm-2 row-cols-md-4">
-          <Col>
-            <p><a href="/" alt="footer link" className="footer-link">Mappa</a></p>
-            <p><a href="/" alt="footer link" className="footer-link">Segnalazioni Fenomeni Intensi</a></p>
-            <p><a href="/" alt="footer link" className="footer-link">Previsioni Testuali</a></p>
-            <p><a href="/" alt="footer link" className="footer-link">Contact Us</a></p>
+        <Row className="row-cols-1 row-cols-sm-2 row-cols-md-4 g-1">
+          <Col className="mb-2">
+            <p><a href="/" className="text-white">Mappa</a></p>
+            <p><a href="/" className="text-white">Segnalazioni Fenomeni Intensi</a></p>
+            <p><a href="/" className="text-white">Previsioni Testuali</a></p>
+            <p><a href="/" className="text-white">Contact Us</a></p>
           </Col>
-          <Col>
-            <p><a href="/" alt="footer link" className="footer-link">Mappa Mare</a></p>
-            <p><a href="/" alt="footer link" className="footer-link">Mappa Montagna</a></p>
-            <p><a href="/" alt="footer link" className="footer-link">Avviso di Burrasca</a></p>
+          <Col className="mb-2">
+            <p><a href="/" className="text-white">Mappa Mare</a></p>
+            <p><a href="/" className="text-white">Mappa Montagna</a></p>
+            <p><a href="/" className="text-white">Avviso di Burrasca</a></p>
           </Col>
-          <Col>
-            <p><a href="/" alt="footer link" className="footer-link">Notizie</a></p>
-            <p><a href="/" alt="footer link" className="footer-link">Località</a></p>
-            <p><a href="/" alt="footer link" className="footer-link">Rivista di Meteorologia</a></p>
+          <Col className="mb-2">
+            <p><a href="/" className="text-white">Notizie</a></p>
+            <p><a href="/" className="text-white">Località</a></p>
+            <p><a href="/" className="text-white">Rivista di Meteorologia</a></p>
           </Col>
-          <Col>
-            <p><a href="/" alt="footer link" className="footer-link">Cookie Preferences</a></p>
-            <p><a href="/" alt="footer link" className="footer-link">Terms of Use</a></p>
-            <p><a href="/" alt="footer link" className="footer-link">Corporate Information</a></p>
+          <Col className="mb-2">
+            <p><a href="/" className="text-white">Cookie Preferences</a></p>
+            <p><a href="/" className="text-white">Terms of Use</a></p>
+            <p><a href="/" className="text-white">Corporate Information</a></p>
           </Col>
         </Row>
         <Row>
           <Col xs={12} className="text-left mb-2">
             <button
               type="button"
-              className="btn btn-sm footer-button rounded-0 mt-3"
+              className="btn btn-sm btn-outline-light rounded-0"
+              style={{ fontSize: '0.75rem' }}
             >
               Service Code
             </button>
           </Col>
         </Row>
         <Row>
-          <Col xs={12} className="text-left mb-2 mt-2 copyright">
+          <Col xs={12} className="text-left mt-2 mb-0" style={{ fontSize: '0.75rem' }}>
             © 1997-{new Date().getFullYear()} EpicMeteo, Inc.
           </Col>
         </Row>

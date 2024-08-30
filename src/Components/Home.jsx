@@ -41,11 +41,11 @@ function Home() {
 
   return (
     <div id="weatherCarousel" className="carousel slide">
-      <div className="carousel-inner">
+      <div className="carousel-inner py-5 my-5 text-dark">
         {weatherData.map((weather, index) => (
           <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={weather.id || index}>
             <div className="d-block w-100 text-center">
-              <h3>{weather.name}</h3>
+              <h2>{weather.name}</h2>
               <p>Temperature: {weather.main.temp}°C</p>
               <p>Condition: {weather.weather[0].description}</p>
               <p>Humidity: {weather.main.humidity}%</p>
